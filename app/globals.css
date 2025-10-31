@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-spinner: spin 1s steps(8, end) infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -8,10 +14,4 @@ body {
 
 @view-transition {
   navigation: auto;
-}
-
-::view-transition-old(*),
-::view-transition-new(*),
-::view-transition-group(*) {
-  animation-duration: 500ms;
 }

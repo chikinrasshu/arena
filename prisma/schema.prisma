@@ -3,7 +3,51 @@ generator client {
   output   = "./generated/prisma"
 }
 
+generator zod {
+  provider = "prisma-zod-generator"
+  output   = "./generated/zod"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Unit {
+  id String @id @default(cuid())
+
+  name   String
+  class  UnitClass
+  gender UnitGender
+
+  lvl Int @default(1)
+  exp Int @default(0)
+  skp Int @default(100)
+
+  hp Int @default(100)
+  mp Int @default(100)
+
+  atk Int @default(10)
+  def Int @default(10)
+  mag Int @default(10)
+  res Int @default(10)
+  spd Int @default(10)
+  luk Int @default(10)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum UnitGender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum UnitClass {
+  WARRIOR
+  MAGE
+  ROGUE
+  CLERIC
+  ARCHER
 }

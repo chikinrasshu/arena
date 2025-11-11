@@ -4,6 +4,7 @@ import { cn } from "@/lib/cn";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,13 +30,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <FrameRoot asChild>
-        <body
-          className={cn("static h-dvh overflow-auto antialiased", geistSans.variable, geistMono.variable)}
-        >
+        <body className={cn("static h-dvh overflow-auto antialiased", geistSans.variable, geistMono.variable)}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <FrameHeader>
-              <nav>
-
+              <nav className="flex flex-row justify-start items-baseline gap-2">
+                <Link href="/">
+                  <span>
+                    <span className="text-base font-semibold">chk</span>
+                    <span className="text-xl font-extrabold">Arena</span>
+                  </span>
+                </Link>
+                <Link href="/tests">
+                  <span>Tests</span>
+                </Link>
               </nav>
               <nav>
                 <ThemeToggle weight="bold" kind="ghost" />

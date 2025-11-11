@@ -9,7 +9,9 @@ export function ThemeToggle({ ...props }: ButtonProps) {
   const [mounted, setMounted] = useState<boolean>(false);
   const { theme, resolvedTheme, setTheme } = useTheme();
 
-  useEffect(() => { setMounted(theme !== undefined); }, [theme]);
+  useEffect(() => {
+    setMounted(theme !== undefined);
+  }, [theme]);
 
   const handleToggle = () => {
     if (theme === "light") setTheme("dark");
@@ -19,5 +21,12 @@ export function ThemeToggle({ ...props }: ButtonProps) {
 
   if (!mounted) return <Button loading {...props} />;
 
-  return <Button className="relative" onClick={handleToggle} icon={resolvedTheme === "light" ? SunIcon : resolvedTheme === "dark" ? MoonIcon : QuestionIcon} {...props} />
+  return (
+    <Button
+      className="relative"
+      onClick={handleToggle}
+      icon={resolvedTheme === "light" ? SunIcon : resolvedTheme === "dark" ? MoonIcon : QuestionIcon}
+      {...props}
+    />
+  );
 }

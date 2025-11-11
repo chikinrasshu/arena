@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* def - Default */
+  --chk-def-a-bg: var(--color-slate-200);
+  --chk-def-a-fg: var(--color-slate-600);
+  --chk-def-a-bd: var(--color-slate-800);
+  --chk-def-b-bg: var(--color-slate-300);
+  --chk-def-b-fg: var(--color-slate-700);
+  --chk-def-b-bd: var(--color-slate-900);
+  --chk-def-c-bg: var(--color-slate-400);
+  --chk-def-c-fg: var(--color-slate-800);
+  --chk-def-c-bd: var(--color-slate-950);
+  --chk-def-hl: var(--color-slate-50);
+  --chk-def-dk: var(--color-slate-950);
+  /* pri - Primary */
+  --chk-pri-a-bg: var(--color-sky-200);
+  --chk-pri-a-fg: var(--color-sky-600);
+  --chk-pri-a-bd: var(--color-sky-800);
+  --chk-pri-b-bg: var(--color-sky-300);
+  --chk-pri-b-fg: var(--color-sky-700);
+  --chk-pri-b-bd: var(--color-sky-900);
+  --chk-pri-c-bg: var(--color-sky-400);
+  --chk-pri-c-fg: var(--color-sky-800);
+  --chk-pri-c-bd: var(--color-sky-950);
+  --chk-pri-hl: var(--color-sky-50);
+  --chk-pri-dk: var(--color-sky-950);
+  /* sec - Secondary */
+  --chk-sec-a-bg: var(--color-blue-200);
+  --chk-sec-a-fg: var(--color-blue-600);
+  --chk-sec-a-bd: var(--color-blue-800);
+  --chk-sec-b-bg: var(--color-blue-300);
+  --chk-sec-b-fg: var(--color-blue-700);
+  --chk-sec-b-bd: var(--color-blue-900);
+  --chk-sec-c-bg: var(--color-blue-400);
+  --chk-sec-c-fg: var(--color-blue-800);
+  --chk-sec-c-bd: var(--color-blue-950);
+  --chk-sec-hl: var(--color-blue-50);
+  --chk-sec-dk: var(--color-blue-950);
+  /* ter - Tertiary */
+  --chk-ter-a-bg: var(--color-violet-200);
+  --chk-ter-a-fg: var(--color-violet-600);
+  --chk-ter-a-bd: var(--color-violet-800);
+  --chk-ter-b-bg: var(--color-violet-300);
+  --chk-ter-b-fg: var(--color-violet-700);
+  --chk-ter-b-bd: var(--color-violet-900);
+  --chk-ter-c-bg: var(--color-violet-400);
+  --chk-ter-c-fg: var(--color-violet-800);
+  --chk-ter-c-bd: var(--color-violet-950);
+  --chk-ter-hl: var(--color-violet-50);
+  --chk-ter-dk: var(--color-violet-950);
+  /* inf - Info */
+  --chk-inf-a-bg: var(--color-cyan-200);
+  --chk-inf-a-fg: var(--color-cyan-600);
+  --chk-inf-a-bd: var(--color-cyan-800);
+  --chk-inf-b-bg: var(--color-cyan-300);
+  --chk-inf-b-fg: var(--color-cyan-700);
+  --chk-inf-b-bd: var(--color-cyan-900);
+  --chk-inf-c-bg: var(--color-cyan-400);
+  --chk-inf-c-fg: var(--color-cyan-800);
+  --chk-inf-c-bd: var(--color-cyan-950);
+  --chk-inf-hl: var(--color-cyan-50);
+  --chk-inf-dk: var(--color-cyan-950);
+  /* suc - Success */
+  --chk-suc-a-bg: var(--color-green-200);
+  --chk-suc-a-fg: var(--color-green-600);
+  --chk-suc-a-bd: var(--color-green-800);
+  --chk-suc-b-bg: var(--color-green-300);
+  --chk-suc-b-fg: var(--color-green-700);
+  --chk-suc-b-bd: var(--color-green-900);
+  --chk-suc-c-bg: var(--color-green-400);
+  --chk-suc-c-fg: var(--color-green-800);
+  --chk-suc-c-bd: var(--color-green-950);
+  --chk-suc-hl: var(--color-green-50);
+  --chk-suc-dk: var(--color-green-950);
+  /* wrn - Warning */
+  --chk-wrn-a-bg: var(--color-amber-200);
+  --chk-wrn-a-fg: var(--color-amber-600);
+  --chk-wrn-a-bd: var(--color-amber-800);
+  --chk-wrn-b-bg: var(--color-amber-300);
+  --chk-wrn-b-fg: var(--color-amber-700);
+  --chk-wrn-b-bd: var(--color-amber-900);
+  --chk-wrn-c-bg: var(--color-amber-400);
+  --chk-wrn-c-fg: var(--color-amber-800);
+  --chk-wrn-c-bd: var(--color-amber-950);
+  --chk-wrn-hl: var(--color-amber-50);
+  --chk-wrn-dk: var(--color-amber-950);
+  /* err - Error */
+  --chk-err-a-bg: var(--color-red-200);
+  --chk-err-a-fg: var(--color-red-600);
+  --chk-err-a-bd: var(--color-red-800);
+  --chk-err-b-bg: var(--color-red-300);
+  --chk-err-b-fg: var(--color-red-700);
+  --chk-err-b-bd: var(--color-red-900);
+  --chk-err-c-bg: var(--color-red-400);
+  --chk-err-c-fg: var(--color-red-800);
+  --chk-err-c-bd: var(--color-red-950);
+  --chk-err-hl: var(--color-red-50);
+  --chk-err-dk: var(--color-red-950);
+  /* ldn - Loading */
+  --chk-ldn-a-bg: var(--color-lime-200);
+  --chk-ldn-a-fg: var(--color-lime-600);
+  --chk-ldn-a-bd: var(--color-lime-800);
+  --chk-ldn-b-bg: var(--color-lime-300);
+  --chk-ldn-b-fg: var(--color-lime-700);
+  --chk-ldn-b-bd: var(--color-lime-900);
+  --chk-ldn-c-bg: var(--color-lime-400);
+  --chk-ldn-c-fg: var(--color-lime-800);
+  --chk-ldn-c-bd: var(--color-lime-950);
+  --chk-ldn-hl: var(--color-lime-50);
+  --chk-ldn-dk: var(--color-lime-950);
+}
+
+.dark {
+  /* def - Default */
+  --chk-def-a-bg: var(--color-slate-800);
+  --chk-def-a-fg: var(--color-slate-400);
+  --chk-def-a-bd: var(--color-slate-950);
+  --chk-def-b-bg: var(--color-slate-700);
+  --chk-def-b-fg: var(--color-slate-300);
+  --chk-def-b-bd: var(--color-slate-900);
+  --chk-def-c-bg: var(--color-slate-600);
+  --chk-def-c-fg: var(--color-slate-200);
+  --chk-def-c-bd: var(--color-slate-800);
+  --chk-def-hl: var(--color-slate-950);
+  --chk-def-dk: var(--color-slate-50);
+  /* pri - Primary */
+  --chk-pri-a-bg: var(--color-sky-800);
+  --chk-pri-a-fg: var(--color-sky-400);
+  --chk-pri-a-bd: var(--color-sky-950);
+  --chk-pri-b-bg: var(--color-sky-700);
+  --chk-pri-b-fg: var(--color-sky-300);
+  --chk-pri-b-bd: var(--color-sky-900);
+  --chk-pri-c-bg: var(--color-sky-600);
+  --chk-pri-c-fg: var(--color-sky-200);
+  --chk-pri-c-bd: var(--color-sky-800);
+  --chk-pri-hl: var(--color-sky-950);
+  --chk-pri-dk: var(--color-sky-50);
+  /* sec - Secondary */
+  --chk-sec-a-bg: var(--color-blue-800);
+  --chk-sec-a-fg: var(--color-blue-400);
+  --chk-sec-a-bd: var(--color-blue-950);
+  --chk-sec-b-bg: var(--color-blue-700);
+  --chk-sec-b-fg: var(--color-blue-300);
+  --chk-sec-b-bd: var(--color-blue-900);
+  --chk-sec-c-bg: var(--color-blue-600);
+  --chk-sec-c-fg: var(--color-blue-200);
+  --chk-sec-c-bd: var(--color-blue-800);
+  --chk-sec-hl: var(--color-blue-950);
+  --chk-sec-dk: var(--color-blue-50);
+  /* ter - Tertiary */
+  --chk-ter-a-bg: var(--color-violet-800);
+  --chk-ter-a-fg: var(--color-violet-400);
+  --chk-ter-a-bd: var(--color-violet-950);
+  --chk-ter-b-bg: var(--color-violet-700);
+  --chk-ter-b-fg: var(--color-violet-300);
+  --chk-ter-b-bd: var(--color-violet-900);
+  --chk-ter-c-bg: var(--color-violet-600);
+  --chk-ter-c-fg: var(--color-violet-200);
+  --chk-ter-c-bd: var(--color-violet-800);
+  --chk-ter-hl: var(--color-violet-950);
+  --chk-ter-dk: var(--color-violet-50);
+  /* inf - Info */
+  --chk-inf-a-bg: var(--color-cyan-800);
+  --chk-inf-a-fg: var(--color-cyan-400);
+  --chk-inf-a-bd: var(--color-cyan-950);
+  --chk-inf-b-bg: var(--color-cyan-700);
+  --chk-inf-b-fg: var(--color-cyan-300);
+  --chk-inf-b-bd: var(--color-cyan-900);
+  --chk-inf-c-bg: var(--color-cyan-600);
+  --chk-inf-c-fg: var(--color-cyan-200);
+  --chk-inf-c-bd: var(--color-cyan-800);
+  --chk-inf-hl: var(--color-cyan-950);
+  --chk-inf-dk: var(--color-cyan-50);
+  /* suc - Success */
+  --chk-suc-a-bg: var(--color-green-800);
+  --chk-suc-a-fg: var(--color-green-400);
+  --chk-suc-a-bd: var(--color-green-950);
+  --chk-suc-b-bg: var(--color-green-700);
+  --chk-suc-b-fg: var(--color-green-300);
+  --chk-suc-b-bd: var(--color-green-900);
+  --chk-suc-c-bg: var(--color-green-600);
+  --chk-suc-c-fg: var(--color-green-200);
+  --chk-suc-c-bd: var(--color-green-800);
+  --chk-suc-hl: var(--color-green-950);
+  --chk-suc-dk: var(--color-green-50);
+  /* wrn - Warning */
+  --chk-wrn-a-bg: var(--color-amber-800);
+  --chk-wrn-a-fg: var(--color-amber-400);
+  --chk-wrn-a-bd: var(--color-amber-950);
+  --chk-wrn-b-bg: var(--color-amber-700);
+  --chk-wrn-b-fg: var(--color-amber-300);
+  --chk-wrn-b-bd: var(--color-amber-900);
+  --chk-wrn-c-bg: var(--color-amber-600);
+  --chk-wrn-c-fg: var(--color-amber-200);
+  --chk-wrn-c-bd: var(--color-amber-800);
+  --chk-wrn-hl: var(--color-amber-950);
+  --chk-wrn-dk: var(--color-amber-50);
+  /* err - Error */
+  --chk-err-a-bg: var(--color-red-800);
+  --chk-err-a-fg: var(--color-red-400);
+  --chk-err-a-bd: var(--color-red-950);
+  --chk-err-b-bg: var(--color-red-700);
+  --chk-err-b-fg: var(--color-red-300);
+  --chk-err-b-bd: var(--color-red-900);
+  --chk-err-c-bg: var(--color-red-600);
+  --chk-err-c-fg: var(--color-red-200);
+  --chk-err-c-bd: var(--color-red-800);
+  --chk-err-hl: var(--color-red-950);
+  --chk-err-dk: var(--color-red-50);
+  /* ldn - Loading */
+  --chk-ldn-a-bg: var(--color-lime-800);
+  --chk-ldn-a-fg: var(--color-lime-400);
+  --chk-ldn-a-bd: var(--color-lime-950);
+  --chk-ldn-b-bg: var(--color-lime-700);
+  --chk-ldn-b-fg: var(--color-lime-300);
+  --chk-ldn-b-bd: var(--color-lime-900);
+  --chk-ldn-c-bg: var(--color-lime-600);
+  --chk-ldn-c-fg: var(--color-lime-200);
+  --chk-ldn-c-bd: var(--color-lime-800);
+  --chk-ldn-hl: var(--color-lime-950);
+  --chk-ldn-dk: var(--color-lime-50);
+}
+
+@theme inline {
+  /* def - Default */
+  --color-def-a-bg: var(--chk-def-a-bg);
+  --color-def-a-fg: var(--chk-def-a-fg);
+  --color-def-a-bd: var(--chk-def-a-bd);
+  --color-def-b-bg: var(--chk-def-b-bg);
+  --color-def-b-fg: var(--chk-def-b-fg);
+  --color-def-b-bd: var(--chk-def-b-bd);
+  --color-def-c-bg: var(--chk-def-c-bg);
+  --color-def-c-fg: var(--chk-def-c-fg);
+  --color-def-c-bd: var(--chk-def-c-bd);
+  --color-def-hl: var(--chk-def-hl);
+  --color-def-dk: var(--chk-def-dk);
+  /* pri - Primary */
+  --color-pri-a-bg: var(--chk-pri-a-bg);
+  --color-pri-a-fg: var(--chk-pri-a-fg);
+  --color-pri-a-bd: var(--chk-pri-a-bd);
+  --color-pri-b-bg: var(--chk-pri-b-bg);
+  --color-pri-b-fg: var(--chk-pri-b-fg);
+  --color-pri-b-bd: var(--chk-pri-b-bd);
+  --color-pri-c-bg: var(--chk-pri-c-bg);
+  --color-pri-c-fg: var(--chk-pri-c-fg);
+  --color-pri-c-bd: var(--chk-pri-c-bd);
+  --color-pri-hl: var(--chk-pri-hl);
+  --color-pri-dk: var(--chk-pri-dk);
+  /* sec - Secondary */
+  --color-sec-a-bg: var(--chk-sec-a-bg);
+  --color-sec-a-fg: var(--chk-sec-a-fg);
+  --color-sec-a-bd: var(--chk-sec-a-bd);
+  --color-sec-b-bg: var(--chk-sec-b-bg);
+  --color-sec-b-fg: var(--chk-sec-b-fg);
+  --color-sec-b-bd: var(--chk-sec-b-bd);
+  --color-sec-c-bg: var(--chk-sec-c-bg);
+  --color-sec-c-fg: var(--chk-sec-c-fg);
+  --color-sec-c-bd: var(--chk-sec-c-bd);
+  --color-sec-hl: var(--chk-sec-hl);
+  --color-sec-dk: var(--chk-sec-dk);
+  /* ter - Tertiary */
+  --color-ter-a-bg: var(--chk-ter-a-bg);
+  --color-ter-a-fg: var(--chk-ter-a-fg);
+  --color-ter-a-bd: var(--chk-ter-a-bd);
+  --color-ter-b-bg: var(--chk-ter-b-bg);
+  --color-ter-b-fg: var(--chk-ter-b-fg);
+  --color-ter-b-bd: var(--chk-ter-b-bd);
+  --color-ter-c-bg: var(--chk-ter-c-bg);
+  --color-ter-c-fg: var(--chk-ter-c-fg);
+  --color-ter-c-bd: var(--chk-ter-c-bd);
+  --color-ter-hl: var(--chk-ter-hl);
+  --color-ter-dk: var(--chk-ter-dk);
+  /* inf - Info */
+  --color-inf-a-bg: var(--chk-inf-a-bg);
+  --color-inf-a-fg: var(--chk-inf-a-fg);
+  --color-inf-a-bd: var(--chk-inf-a-bd);
+  --color-inf-b-bg: var(--chk-inf-b-bg);
+  --color-inf-b-fg: var(--chk-inf-b-fg);
+  --color-inf-b-bd: var(--chk-inf-b-bd);
+  --color-inf-c-bg: var(--chk-inf-c-bg);
+  --color-inf-c-fg: var(--chk-inf-c-fg);
+  --color-inf-c-bd: var(--chk-inf-c-bd);
+  --color-inf-hl: var(--chk-inf-hl);
+  --color-inf-dk: var(--chk-inf-dk);
+  /* suc - Success */
+  --color-suc-a-bg: var(--chk-suc-a-bg);
+  --color-suc-a-fg: var(--chk-suc-a-fg);
+  --color-suc-a-bd: var(--chk-suc-a-bd);
+  --color-suc-b-bg: var(--chk-suc-b-bg);
+  --color-suc-b-fg: var(--chk-suc-b-fg);
+  --color-suc-b-bd: var(--chk-suc-b-bd);
+  --color-suc-c-bg: var(--chk-suc-c-bg);
+  --color-suc-c-fg: var(--chk-suc-c-fg);
+  --color-suc-c-bd: var(--chk-suc-c-bd);
+  --color-suc-hl: var(--chk-suc-hl);
+  --color-suc-dk: var(--chk-suc-dk);
+  /* wrn - Warning */
+  --color-wrn-a-bg: var(--chk-wrn-a-bg);
+  --color-wrn-a-fg: var(--chk-wrn-a-fg);
+  --color-wrn-a-bd: var(--chk-wrn-a-bd);
+  --color-wrn-b-bg: var(--chk-wrn-b-bg);
+  --color-wrn-b-fg: var(--chk-wrn-b-fg);
+  --color-wrn-b-bd: var(--chk-wrn-b-bd);
+  --color-wrn-c-bg: var(--chk-wrn-c-bg);
+  --color-wrn-c-fg: var(--chk-wrn-c-fg);
+  --color-wrn-c-bd: var(--chk-wrn-c-bd);
+  --color-wrn-hl: var(--chk-wrn-hl);
+  --color-wrn-dk: var(--chk-wrn-dk);
+  /* err - Error */
+  --color-err-a-bg: var(--chk-err-a-bg);
+  --color-err-a-fg: var(--chk-err-a-fg);
+  --color-err-a-bd: var(--chk-err-a-bd);
+  --color-err-b-bg: var(--chk-err-b-bg);
+  --color-err-b-fg: var(--chk-err-b-fg);
+  --color-err-b-bd: var(--chk-err-b-bd);
+  --color-err-c-bg: var(--chk-err-c-bg);
+  --color-err-c-fg: var(--chk-err-c-fg);
+  --color-err-c-bd: var(--chk-err-c-bd);
+  --color-err-hl: var(--chk-err-hl);
+  --color-err-dk: var(--chk-err-dk);
+  /* ldn - Loading */
+  --color-ldn-a-bg: var(--chk-ldn-a-bg);
+  --color-ldn-a-fg: var(--chk-ldn-a-fg);
+  --color-ldn-a-bd: var(--chk-ldn-a-bd);
+  --color-ldn-b-bg: var(--chk-ldn-b-bg);
+  --color-ldn-b-fg: var(--chk-ldn-b-fg);
+  --color-ldn-b-bd: var(--chk-ldn-b-bd);
+  --color-ldn-c-bg: var(--chk-ldn-c-bg);
+  --color-ldn-c-fg: var(--chk-ldn-c-fg);
+  --color-ldn-c-bd: var(--chk-ldn-c-bd);
+  --color-ldn-hl: var(--chk-ldn-hl);
+  --color-ldn-dk: var(--chk-ldn-dk);
+}
